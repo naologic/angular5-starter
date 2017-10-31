@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ng4fbbootstrap"
+    "name": "angular5-starter"
   },
   "apps": [
     {
@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "scss/style.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -54,7 +54,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
+    "prefixInterfaces": false,
     "class": {
       "spec": false
     },
