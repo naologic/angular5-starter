@@ -4,23 +4,12 @@ language: node_js
 node_js:
   - '8.4'
 
-addons:
-apt:
-  sources:
-    - google-chrome
-  packages:
-    - google-chrome-stable
-    - google-chrome-beta
-
-before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+branches:
+  only:
+  - master
 
 before_script:
-- npm install -g angular-cli
-- npm install -g karma
-- npm install
-- ng build
-
-script: karma start config/karma.conf.js --single-run
+  - npm install -g --silent @angular/cli
+  - npm install -g --silent karma
+  - npm install
+  - ng build
