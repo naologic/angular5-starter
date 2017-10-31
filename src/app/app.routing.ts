@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { Level0Guard } from './guards/level0.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [{
     path: '',
@@ -14,7 +15,13 @@ export const routes: Routes = [{
         data: {
             title: 'Home'
         },
-        children: []
+        children: [
+            {
+                path: 'dashboard',
+                component: DashboardComponent,
+                canLoad: ['Level0Guard', 'AuthGuard']
+            }
+        ]
     },
     {
         path: '',
