@@ -1,41 +1,57 @@
 <div class="app flex-row align-items-center">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card-group mb-0">
-          <div class="card p-4">
-            <div class="card-block">
-              <h1>Login</h1>
-              <p class="text-muted">Sign In to your account</p>
-              <div class="input-group mb-3">
-                <span class="input-group-addon"><i class="icon-user"></i></span>
-                <input type="text" class="form-control" placeholder="Username">
-              </div>
-              <div class="input-group mb-4">
-                <span class="input-group-addon"><i class="icon-lock"></i></span>
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <button type="button" class="btn btn-primary px-4">Login</button>
-                </div>
-                <div class="col-6 text-right">
-                  <button type="button" class="btn btn-link px-0">Forgot password?</button>
-                </div>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="row justify-content-center" [formGroup]="formGroup">
+        <div class="col-md-8">
+          <div class="card-group mb-0">
+            <div class="card p-4">
+              <div class="card-block">
+                  <h1>Login</h1>
+                  <p class="text-muted">Sign In to your account</p>
+                  <div class="input-group mb-3">
+                    <span class="input-group-addon"><i class="icon-user"></i></span>
+                    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Username">
+                  </div>
+                  <div class="input-group mb-3">
+                    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                      <div *ngIf="username.errors.required"> Username is required. </div>
+                      <div *ngIf="username.errors.minlength"> Username must be at least {{ username.errors.minlength.requiredLength }}  characters long. </div>
+                      <div *ngIf="username.errors.email"> Invalid email format </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-4">
+                    <span class="input-group-addon"><i class="icon-lock"></i></span>
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="input-group mb-4">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                      <div *ngIf="password.errors.required"> Password is required. </div>
+                      <div *ngIf="password.errors.minlength"> Password must be at least {{ password.errors.minlength.requiredLength }} characters long. </div>
+                      <div *ngIf="password.errors.maxlength"> Password must be maximum {{ password.errors.maxlength.requiredLength }} characters long. </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-primary px-4" [disabled]="formGroup.disabled">Login</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button type="button" class="btn btn-link px-0" [disabled]="formGroup.disabled">Forgot password?</button>
+                    </div>
+                  </div>
               </div>
             </div>
-          </div>
-          <div class="card card-inverse card-primary py-5 d-md-down-none" style="width:44%">
-            <div class="card-block text-center">
-              <div>
-                <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button type="button" class="btn btn-primary active mt-3">Register Now!</button>
+            <div class="card card-inverse card-primary py-5 d-md-down-none" style="width:44%">
+              <div class="card-block text-center">
+                <div>
+                  <h2>Sign up</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <button type="button" class="btn btn-primary active mt-3">Register Now!</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
