@@ -1,4 +1,6 @@
 # Angular5 Starter
+[![Build Status](https://travis-ci.org/naologic/angular-super-validator.svg?branch=master)](https://travis-ci.org/naologic/angular-super-validator)
+
 
 _This project is a starter pack with Angular5 for different projects_
 
