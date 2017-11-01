@@ -1,6 +1,6 @@
 # Angular5 Starter
 [![Build Status](https://travis-ci.org/naologic/angular5-starter.svg?branch=master)](https://travis-ci.org/naologic/angular5-starter)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/naologic/angular-super-validator/badge.svg)](https://snyk.io/test/github/naologic/angular-super-validator)
 
 _This project is a starter pack with Angular5 for different projects_
 
