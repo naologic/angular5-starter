@@ -55,7 +55,7 @@ const GUARDS = [
           useClass: HashLocationStrategy
       },
       {
-          provide: HttpClientService,
+          provide: 'HttpClientService',
           useFactory: function(httpHandler: HttpHandler) {
               return new HttpClientService(httpHandler, Injector);
           },
