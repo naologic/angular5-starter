@@ -55,10 +55,8 @@ const GUARDS = [
           useClass: HashLocationStrategy
       },
       {
-          provide: 'HttpClientService',
-          useFactory: function(httpHandler: HttpHandler) {
-              return new HttpClientService(httpHandler, Injector);
-          },
+          provide: HttpClientService,
+          useFactory: httpFactory,
           deps: [HttpHandler]
       },
       ToasterService,
@@ -70,3 +68,7 @@ const GUARDS = [
   ]
 })
 export class AppModule { }
+
+export function httpFactory (httpHandler: HttpHandler, i: Injector) {
+    return new HttpClientService(httpHandler, i);
+}
