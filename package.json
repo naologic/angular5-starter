@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test-single-run": "karma start karma.conf.js --single-run"
+    "test-single-run": "karma start karma.conf.js --single-run",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
@@ -41,7 +43,8 @@
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.2",
     "stacktrace-js": "^2.0.0",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "snyk": "^1.52.1"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.2",
@@ -63,5 +66,6 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "typescript": "^2.6.1"
-  }
+  },
+  "snyk": true
 }
