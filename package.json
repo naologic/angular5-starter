@@ -34,7 +34,7 @@
     "core-js": "^2.4.1",
     "d3": "^4.11.0",
     "dragula": "^3.7.2",
-    "firebase": "^4.6.2",
+    "firebase": "^5.0.3",
     "lodash": "^4.17.4",
     "moment": "^2.19.2",
     "moment-timezone": "^0.5.14",
