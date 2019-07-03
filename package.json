@@ -44,7 +44,7 @@
     "rxjs": "^5.5.2",
     "stacktrace-js": "^2.0.0",
     "zone.js": "^0.8.14",
-    "snyk": "^1.52.1"
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.2",
